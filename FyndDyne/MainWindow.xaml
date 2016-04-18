@@ -1,0 +1,84 @@
+﻿<Window x:Class="FyndDyne.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FyndDyne"
+        mc:Ignorable="d"
+        Title="FyndDyne" Height="600" Width="800" Background="#212121">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#C70039">
+            <TextBlock Text="FyndDyne" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontFamily="Verdena" Foreground="White" FontWeight="Light" />
+            <Button x:Name="Login" HorizontalAlignment="Left" Width="100" VerticalAlignment="Center" Height="35" Background="#212121" Margin="5,0,5,0" Foreground="White" Content="Login" FontSize="20" FontWeight="Light" Click="LoginButtonClick"/>
+            <Button x:Name="SignUp" HorizontalAlignment="Right" Width="100" VerticalAlignment="Bottom" Height="36" Background="#212121" Margin="0,0,5,6" Foreground="White" Content="Sign Up" FontSize="20" FontWeight="Light" Click="SignUpButtonClick"/>
+
+        </Grid>
+        <Grid Grid.Row="1" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox x:Name="Search" Text="Search for Restaurant/Items..." FontSize="20" Foreground="DarkGray"  VerticalAlignment="Center" Height="35" Width="500" FontWeight="Light" Padding="5,2,5,2"/>
+                <Button x:Name="SearchButton" Content="Search" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="2" >
+            <Image Source="C:\Users\Sith Lord\Pictures\b1.jpg" Margin="10" HorizontalAlignment="Center" Width="800"/>
+
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
+                    <TextBlock Text="Restaurant One" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="OpenTime" Text="Open 10:00 - 23:00" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
+                    <TextBlock Text="Restaurant Two" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="OpenTime1" Text="Open 10:00 - 23:00" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+            <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" Grid.Column="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
+                    <TextBlock Text="Restaurant Three" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="OpenTime2" Text="Open 10:00 - 23:00" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+
+
+
+        </Grid>
+    </Grid>
+</Window>
