@@ -18,3 +18,5 @@ c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\D
 c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\SignIn.baml
 c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\AdminPortal.g.cs
 c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\AdminPortal.baml
+c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Orders.g.cs
+c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Orders.baml

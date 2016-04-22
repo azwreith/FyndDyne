@@ -29,5 +29,12 @@ namespace FyndDyne
             this.Hide();
             new Register().Show();
         }
+
+
+        private void SubmitButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new AdminPortal().Show();
+        }
     }
 }
