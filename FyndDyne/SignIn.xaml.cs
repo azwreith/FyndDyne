@@ -50,27 +50,39 @@ namespace FyndDyne {
                     Trace.WriteLine(MainWindow.User + " " + MainWindow.Type);
                     if(UserType.Text == "Customer") {
                         MainWindow.Type = UserType.Text;
+                        reader.Close();
+                        dbCon.Close();
+                        this.Close();
                         new MainWindow().Show();
                     }
                     else if(UserType.Text == "FD Employee") {
                         MainWindow.Type = reader.GetString("user_level");
                         if(MainWindow.Type == "Admin") {
+                            reader.Close();
+                            dbCon.Close();
+                            this.Close();
                             new AdminPortal().Show();
                         }
                         else {
+                            reader.Close();
+                            dbCon.Close();
+                            this.Close();
                             new FDEmployee().Show();
                         }
                     }
                     else if(UserType.Text == "Manager") {
                         MainWindow.Type = UserType.Text;
+                        reader.Close();
+                        dbCon.Close();
+                        this.Close();
                         //TODO add Manager Window
                     }
                 }
                 else {
+                    reader.Close();
+                    dbCon.Close();
                     MessageBox.Show("Invalid User/Pass", "Error");
                 }
-                dbCon.Close();
-                this.Close();
             }
             catch(MySqlException ex) {
                 Trace.WriteLine(ex);

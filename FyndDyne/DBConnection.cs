@@ -29,14 +29,12 @@ namespace FyndDyne {
                 connection = new MySqlConnection(connstring);
                 connection.Open();
             }
-            else {
-                connection.Open();
-            }
 
         }
 
         public void Close() {
             connection.Close();
+            connection = null;
         }
     }
 }

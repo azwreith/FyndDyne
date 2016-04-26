@@ -20,33 +20,39 @@ namespace FyndDyne {
     /// </summary>
     /// 
     
-    class Pending {
-        string o_id;
-        string address;
-        string total_cost;
+    class PendingClass {
+        public string o_id { get; set; }
+        public string address { get; set; }
+        public string total_cost { get; set; }
 
-        public Pending(string o_id, string street, string city, string state, string zip, string total_cost) {
+        public PendingClass(string o_id, string street, string city, string state, string zip, string total_cost) {
             this.o_id = o_id;
             address = street + " " + city + " " + " " + state + " " + " " + zip;
             this.total_cost = total_cost;
         }
+        
+        public string desc() {
+            return o_id + address + total_cost;
+        }
     }
 
     public partial class FDEmployee : Window {
-        List<Pending> pending = new List<Pending>();
+        List<PendingClass> pending = new List<PendingClass>();
         public FDEmployee() {
             InitializeComponent();
             
             try {
                 var dbCon = DBConnection.Instance();
                 dbCon.Open();
-                string query = String.Format("SELECT o_id, total_cost, street, city, state, zip, FROM User NATURAL JOIN Orders WHERE fde_id='{0}' AND status='Pending'", MainWindow.User);
+                string query = String.Format("SELECT o_id, total_cost, street, city, state, zip FROM User NATURAL JOIN Orders WHERE fde_id='{0}' AND status='Pending'", MainWindow.User);
                 var cmd = new MySqlCommand(query, dbCon.Connection);
                 var reader = cmd.ExecuteReader();
                 while(reader.Read()) {
-                    pending.Add(new Pending(reader.GetString("o_id"), reader.GetString("total_cost"), reader.GetString("street"), reader.GetString("city"), reader.GetString("state"), reader.GetString("zip")));
+                    pending.Add(new PendingClass(reader.GetString("o_id"), reader.GetString("total_cost"), reader.GetString("street"), reader.GetString("city"), reader.GetString("state"), reader.GetString("zip")));
                 }
+                reader.Close();
                 dbCon.Close();
+                PendingList.ItemsSource = pending;
             }
             catch(Exception ex) {
                 Trace.WriteLine(ex);

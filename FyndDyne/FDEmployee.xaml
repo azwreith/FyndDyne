@@ -23,24 +23,30 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Margin="5" Grid.Column="1" >
-                    <StackPanel x:Name="Pending" Background="AntiqueWhite">
+                    <StackPanel Background="AntiqueWhite">
                         <Grid Background="#C70039" Margin="0,0,0,5">
                             <TextBlock Text="Pending Orders" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                         </Grid>
+                        <ListView x:Name="PendingList" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="6*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <StackPanel>
-                                <TextBlock Text="Order Id" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                                <TextBlock Text="Address" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                                <TextBlock Text="Price" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
+                                <TextBlock x:Name="o_id" Text="{Binding o_id}" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                                <TextBlock x:Name="address" Text="{Binding address}" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                                <TextBlock x:Name="total_cost" Text="{Binding total_cost}" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
                             </StackPanel>
                             <Button x:Name="Done" Content="Done" Grid.Column="1" VerticalAlignment="Center" Width="75" Height="25" Background="#212121" Margin="5,0,5,0" Foreground="White" FontSize="17" FontWeight="Light" Click="DoneButtonClicked"/>
                         </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
-                    <StackPanel x:Name="Completed" Background="AntiqueWhite" Margin="0,20,0,0">
+                    <StackPanel Background="AntiqueWhite" Margin="0,20,0,0">
                         <Grid Background="#C70039" Margin="0,0,0,5">
                             <TextBlock Text="Completed Orders" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                         </Grid>

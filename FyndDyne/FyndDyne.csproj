@@ -84,6 +84,7 @@
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities.cs" />
     <Page Include="AdminPortal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
