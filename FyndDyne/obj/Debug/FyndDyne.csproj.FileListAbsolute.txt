@@ -27,3 +27,4 @@ C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\D
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\bin\Debug\FyndDyne.exe.config
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.exe
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.pdb
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\bin\Debug\MySql.Data.dll
