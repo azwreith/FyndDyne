@@ -55,7 +55,7 @@ CREATE TABLE Product (
   FOREIGN KEY(r_id) REFERENCES Restaurant(r_id)
 );
 
-CREATE TABLE Orders (
+CREATE TABLE Orders
   o_id INT AUTO_INCREMENT,
   u_id VARCHAR(30),
   fde_id VARCHAR(30),
