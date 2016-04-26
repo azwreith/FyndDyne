@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -35,40 +36,70 @@ namespace FyndDyne
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            bool flag = true;
-            if (FirstName.Text.Equals("") || LastName.Text.Equals("") || UserName.Text.Equals("")
-                || Password.Password.Equals("") || ConfirmPassword.Password.Equals("") ||
-                StreetAddress.Text.Equals("") || City.Text.Equals("") || State.Text.Equals("") ||
-                ZipCode.Text.Equals("") || Phone.Text.Equals("") || Email.Text.Equals(""))
-            {
-                //Display error message
-                flag = false;
+            try {
+                var dbCon = DBConnection.Instance();
+                dbCon.Open();
+
+                bool flag = true;
+                if(FirstName.Text.Equals("") || LastName.Text.Equals("") || UserName.Text.Equals("")
+                    || Password.Password.Equals("") || ConfirmPassword.Password.Equals("") ||
+                    StreetAddress.Text.Equals("") || City.Text.Equals("") || State.Text.Equals("") ||
+                    ZipCode.Text.Equals("") || Phone.Text.Equals("") || Email.Text.Equals("")) {
+                    MessageBox.Show("Please Fill All Fields!", "Error");
+                    flag = false;
+                }
+                else if(!Password.Password.Equals(ConfirmPassword.Password)) {
+                    MessageBox.Show("Passwords Do Not Match!", "Error");
+                    flag = false;
+                }
+                else if(!Regex.IsMatch(ZipCode.Text, "^[0-9]{6}$")) {
+                    MessageBox.Show("Invalid Zip!", "Error");
+                    flag = false;
+                }
+                else if(!Regex.IsMatch(Phone.Text, "^[0-9]{10}$")) {
+                    MessageBox.Show("Invalid Phone!", "Error");
+                    flag = false;
+                }
+                else if(!Regex.IsMatch(Email.Text, "^[a-zA-Z0-9.]{2,}@[a-zA-Z]*.[a-z]{2,}")) {
+                    MessageBox.Show("Passwords Do Not Match!", "Error");
+                    flag = false;
+                }
+                string query = "SELECT * FROM User WHERE u_id='" + UserName.Text + "'";
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                var reader = cmd.ExecuteReader();
+                if(reader.Read()) {
+                    MessageBox.Show("Username Already Exists!", "Error");
+                    flag = false;
+                }
+                reader.Close();
+                Trace.WriteLine(flag);
+                if(flag) {
+                    //TODO Backend
+                    query = String.Format("INSERT INTO User VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
+                        UserName.Text,
+                        Utilities.MD5(Password.Password),
+                        FirstName.Text,
+                        LastName.Text,
+                        Phone.Text,
+                        StreetAddress.Text,
+                        City.Text,
+                        State.Text,
+                        ZipCode.Text,
+                        Email.Text
+                    );
+                    cmd = new MySqlCommand(query, dbCon.Connection);
+                    if(cmd.ExecuteNonQuery() == 1) {
+                        new SignIn().Show();
+                        this.Close();
+                    }
+                    else {
+                        MessageBox.Show("There was some error. Try Again!", "Error");
+                    }
+                }
+                dbCon.Close();
             }
-            else if (!Password.Password.Equals(ConfirmPassword.Password))
-            {
-                //Display error message
-                flag = false;
-            }
-            else if (!Regex.IsMatch(ZipCode.Text, "^[0-9]{6}$"))
-            {
-                flag = false;
-            }
-            else if (!Regex.IsMatch(Phone.Text, "^[0-9]{10}$"))
-            {
-                flag = false;
-            }
-            else if (!Regex.IsMatch(Email.Text, "^[a-zA-Z0-9.]{2,}@[a-zA-Z]*.[a-z]{2,}"))
-            {
-                flag = false;
-            }
-            //if username already in database.
-            Trace.WriteLine(flag);
-            if (flag)
-            {
-                //call helper and register.
-                //open sign in page
-                this.Close();
-                new SignIn().Show();
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
             }
         }
     }
