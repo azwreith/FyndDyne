@@ -39,7 +39,7 @@
         <Grid Grid.Row="2">
 
             <WrapPanel HorizontalAlignment="Center" FlowDirection="LeftToRight">
-                        <ListView x:Name="Restaurants" MouseDoubleClick="RestaurantSelected">
+                        <ListView x:Name="Restaurant" MouseDoubleClick="RestaurantSelected">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     

@@ -60,7 +60,8 @@ namespace FyndDyne
                 }
                 reader.Close();
                 dbCon.Close();
-                Restaurants.ItemsSource = reslist;
+                Restaurant.ItemsSource = reslist;
+                
             }
             catch (Exception ex)
             {
@@ -108,7 +109,7 @@ namespace FyndDyne
                 }
                 reader.Close();
                 dbCon.Close();
-                //TODO Add ItemSource
+                Restaurant.ItemsSource = reslist;
             }
             catch (Exception ex)
             {
@@ -118,9 +119,10 @@ namespace FyndDyne
 
         private void RestaurantSelected(object sender, MouseButtonEventArgs e)
         {
+
+            RestaurantClass rc = Restaurant.SelectedItem as RestaurantClass;
+            //new Menu(rc.r_id).Show();
             this.Close();
-            RestaurantClass rc = Restaurants.SelectedItem as RestaurantClass;
-            new Menu(rc.r_id).Show();
         }
     }
 }
