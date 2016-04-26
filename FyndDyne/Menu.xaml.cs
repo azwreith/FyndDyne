@@ -19,7 +19,7 @@ namespace FyndDyne
     /// </summary>
     public partial class Menuxaml : Window
     {
-        public Menuxaml()
+        public Menuxaml(int r_id)
         {
             InitializeComponent();
         }

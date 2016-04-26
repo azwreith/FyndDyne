@@ -29,7 +29,7 @@
         <Grid Grid.Row="0" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox x:Name="Search" Text="Search for Restaurant/Items..." FontSize="20" Foreground="DarkGray"  VerticalAlignment="Center" Height="35" Width="500" FontWeight="Light" Padding="5,2,5,2"/>
-                <Button x:Name="SearchButton" Content="Search" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light"/>
+                <Button x:Name="SearchButton" Content="Search" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light" Click="SearchButton_Click"/>
             </StackPanel>
         </Grid>
                 <Grid Grid.Row="1" Margin="10,0,10,0">
@@ -39,46 +39,28 @@
         <Grid Grid.Row="2">
 
             <WrapPanel HorizontalAlignment="Center" FlowDirection="LeftToRight">
+                        <ListView x:Name="Restaurants" MouseDoubleClick="RestaurantSelected">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    
             <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" MaxWidth="225">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="4*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
+                    <TextBlock Text="{Binding name}" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding phone}" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                         
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
-                    <TextBlock Text="Restaurant One" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="OpenTime" Text="Open 10:00 - 23:00" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
-                </Grid>
-            </Border>
-            <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" MaxWidth="225">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="4*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-
-                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
-                    <TextBlock Text="Restaurant Two" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
-                    <TextBlock x:Name="OpenTime1" Text="Open 10:00 - 23:00" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
-                </Grid>
-            </Border>
-                        <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" MaxWidth="225">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="4*" />
-                                    <RowDefinition Height="*" />
-                                    <RowDefinition Height="*" />
-                                </Grid.RowDefinitions>
-
-                                <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
-                                <TextBlock Text="Restaurant Three" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
-                                <TextBlock x:Name="OpenTime2" Text="Open 10:00 - 23:00" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
-                            </Grid> 
-                        </Border>
                     </WrapPanel>
                 </Grid>
             </Grid>
