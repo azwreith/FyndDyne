@@ -36,5 +36,10 @@ namespace FyndDyne
             this.Hide();
             new SignIn().Show();
         }
+
+        private void LogoutButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

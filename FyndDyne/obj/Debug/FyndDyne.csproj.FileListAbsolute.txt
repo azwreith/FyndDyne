@@ -20,3 +20,7 @@ c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\D
 c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\AdminPortal.baml
 c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Orders.g.cs
 c:\Users\sith lord\documents\visual studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Orders.baml
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Cart.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Menu.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Cart.baml
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Menu.baml
