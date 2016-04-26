@@ -55,3 +55,8 @@ INSERT INTO PRODUCT(r_id, name, category, type, description, price)
 VALUES (2, 'Belgian Chocolate', 'Dessert', 'Veg', 'Enjoy the very best icecream', 30);
 INSERT INTO PRODUCT(r_id, name, category, type, description, price)
 VALUES (2, 'Blueberry', 'Dessert', 'Veg', 'Enjoy the very best icecream', 30);
+
+INSERT INTO Orders(u_id, fde_id, total_cost, delivery_type, status)
+VALUES ('ujj', 'kev', 300, 'Delivery', 'Pending');
+INSERT INTO Orders(u_id, fde_id, total_cost, delivery_type, status)
+VALUES ('matt', 'kev', 150, 'Delivery', 'Pending');

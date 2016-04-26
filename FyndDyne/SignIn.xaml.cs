@@ -58,7 +58,7 @@ namespace FyndDyne {
                             new AdminPortal().Show();
                         }
                         else {
-                            //TODO add FD Employee Window
+                            new FDEmployee().Show();
                         }
                     }
                     else if(UserType.Text == "Manager") {

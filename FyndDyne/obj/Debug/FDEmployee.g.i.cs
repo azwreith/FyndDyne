@@ -57,14 +57,6 @@ namespace FyndDyne {
         #line hidden
         
         
-        #line 30 "..\..\FDEmployee.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Grid pending_card;
-        
-        #line default
-        #line hidden
-        
-        
         #line 40 "..\..\FDEmployee.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Done;
@@ -123,9 +115,6 @@ namespace FyndDyne {
             this.Pending = ((System.Windows.Controls.StackPanel)(target));
             return;
             case 3:
-            this.pending_card = ((System.Windows.Controls.Grid)(target));
-            return;
-            case 4:
             this.Done = ((System.Windows.Controls.Button)(target));
             
             #line 40 "..\..\FDEmployee.xaml"
@@ -134,7 +123,7 @@ namespace FyndDyne {
             #line default
             #line hidden
             return;
-            case 5:
+            case 4:
             this.Completed = ((System.Windows.Controls.StackPanel)(target));
             return;
             }
