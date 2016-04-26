@@ -41,5 +41,10 @@ namespace FyndDyne
         {
 
         }
+
+        private void CartButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
