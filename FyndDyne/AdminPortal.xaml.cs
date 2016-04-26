@@ -23,5 +23,13 @@ namespace FyndDyne
         {
             InitializeComponent();
         }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.User = null;
+            MainWindow.Type = null;
+            new MainWindow().Show();
+            this.Close();
+        }
     }
 }

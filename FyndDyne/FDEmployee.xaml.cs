@@ -58,7 +58,10 @@ namespace FyndDyne {
         }
 
         private void LogoutButtonClicked(object sender, RoutedEventArgs e) {
-
+            MainWindow.User = null;
+            MainWindow.Type = null;
+            new MainWindow().Show();
+            this.Close();
         }
     }
 }

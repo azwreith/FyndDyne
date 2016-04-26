@@ -22,16 +22,21 @@ namespace FyndDyne
         public Orders()
         {
             InitializeComponent();
+            //TODO how to get to orders page?
         }
 
         private void LogoutButtonClick(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.User = null;
+            MainWindow.Type = null;
+            new MainWindow().Show();
+            this.Close();
         }
 
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
-
+            new MainWindow().Show();
+            this.Close();
         }
     }
 }

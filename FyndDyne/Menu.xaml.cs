@@ -26,12 +26,15 @@ namespace FyndDyne
 
         private void LogoutButtonClick(object sender, RoutedEventArgs e)
         {
-
+            MainWindow.User = null;
+            MainWindow.Type = null;
+            new MainWindow().Show();
+            this.Close();
         }
 
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
-
+            //TODO back to the restaurant page
         }
     }
 }
