@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,8 @@ namespace FyndDyne
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string User = null;
+        public static string Type = null;   //Customer, Admin, Employee, Manager
         public MainWindow()
         {
             InitializeComponent();

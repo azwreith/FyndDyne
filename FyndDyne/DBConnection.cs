@@ -23,12 +23,16 @@ namespace FyndDyne {
             return _instance;
         }
 
-        public void Connect() {
+        public void Open() {
             if(Connection == null) {
-                string connstring = string.Format("Server=localhost; database=fynddine; UID=root; password=omgitsujj");
+                string connstring = string.Format("Server=localhost; database=fynddyne; UID=root; password=omgitsujj");
                 connection = new MySqlConnection(connstring);
                 connection.Open();
             }
+            else {
+                connection.Open();
+            }
+
         }
 
         public void Close() {

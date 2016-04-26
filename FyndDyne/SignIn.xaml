@@ -17,9 +17,9 @@
         </Grid>
         <Grid Grid.Row="1" HorizontalAlignment="Center" Margin="15">
             <StackPanel>
-                <ComboBox x:Name="UserType" Background="Gray" Width="120" >
+                <ComboBox x:Name="UserType" Background="Gray" Width="120" SelectedIndex="0">
                     <ComboBoxItem>Customer</ComboBoxItem>
-                    <ComboBoxItem>Administrator</ComboBoxItem>
+                    <ComboBoxItem>FD Employee</ComboBoxItem>
                     <ComboBoxItem>Manager</ComboBoxItem>
                 </ComboBox>
                 <Label Content="Username" Target="{Binding ElementName=UserName}" Foreground="White" FontSize="20" FontWeight="ExtraLight" Margin="0,30,0,0"/>
