@@ -27,12 +27,6 @@ namespace FyndDyne
             InitializeComponent();
         }
 
-        private void LoginButtonClick(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            new SignIn().Show();
-        }
-
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             bool flag = true;
@@ -70,6 +64,12 @@ namespace FyndDyne
                 this.Close();
                 new SignIn().Show();
             }
+        }
+
+        private void BackButtonClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            new MainWindow().Show();
         }
     }
 }

@@ -43,7 +43,7 @@ namespace FyndDyne {
         
         #line 16 "..\..\Register.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button Login;
+        internal System.Windows.Controls.Button Back;
         
         #line default
         #line hidden
@@ -175,10 +175,10 @@ namespace FyndDyne {
             switch (connectionId)
             {
             case 1:
-            this.Login = ((System.Windows.Controls.Button)(target));
+            this.Back = ((System.Windows.Controls.Button)(target));
             
             #line 16 "..\..\Register.xaml"
-            this.Login.Click += new System.Windows.RoutedEventHandler(this.LoginButtonClick);
+            this.Back.Click += new System.Windows.RoutedEventHandler(this.BackButtonClick);
             
             #line default
             #line hidden
