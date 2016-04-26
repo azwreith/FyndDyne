@@ -68,7 +68,6 @@ namespace FyndDyne
                 reader.Close();
                 Trace.WriteLine(flag);
                 if(flag) {
-                    //TODO Backend
                     query = String.Format("INSERT INTO User VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}')",
                         UserName.Text,
                         Utilities.MD5(Password.Password),
