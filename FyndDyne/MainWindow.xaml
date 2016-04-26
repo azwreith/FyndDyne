@@ -39,9 +39,9 @@
         <Grid Grid.Row="2">
 
             <WrapPanel HorizontalAlignment="Center" FlowDirection="LeftToRight">
-                        <ListView x:Name="Restaurant" MouseDoubleClick="RestaurantSelected">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
+            <ListView x:Name="Restaurant" MouseDoubleClick="RestaurantSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
                                     
             <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" MaxWidth="225">
                 <Grid>

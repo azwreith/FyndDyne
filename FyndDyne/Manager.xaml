@@ -21,10 +21,10 @@
                 <ColumnDefinition Width="8*" />
             </Grid.ColumnDefinitions>
             <Border BorderBrush="AntiqueWhite" BorderThickness="1" Grid.Column="0">
-            <StackPanel>
-                <Button Content="Assign Order" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Margin="0,40,0,0" Height="40"/>
-                <Button Content="Add Items" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40"/>
-                <Button Content="View Orders" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40"/>
+                <StackPanel>
+                    <Button Content="Assign Order" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Margin="0,40,0,0" Height="40"/>
+                    <Button Content="Add Items" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40"/>
+                    <Button Content="View Orders" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40"/>
                 </StackPanel>
             </Border>
             <StackPanel x:Name="Pending"  Grid.Column="1" Margin="10">
@@ -32,20 +32,20 @@
                     <TextBlock Text="Pending Orders" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                 </Grid>
                 <StackPanel Background="AntiqueWhite">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="6*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel>
-                        <TextBlock Text="Order Id" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                        <TextBlock Text="Address" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                        <TextBlock Text="Price" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
-                    </StackPanel>
-                    <Button x:Name="Done" Content="Done" Grid.Column="1" VerticalAlignment="Center" Width="75" Height="25" Background="#212121" Margin="5,0,5,0" Foreground="White" FontSize="17" FontWeight="Light" Click="DoneButtonClicked"/>
-                </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Order Id" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                            <TextBlock Text="Address" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                            <TextBlock Text="Price" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
+                        </StackPanel>
+                        <Button x:Name="Done" Content="Done" Grid.Column="1" VerticalAlignment="Center" Width="75" Height="24" Background="#212121" Margin="7,18,-3,18" Foreground="White" FontSize="17" FontWeight="Light" Click="DoneButtonClicked"/>
+                    </Grid>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
         </Grid>
     </Grid>
 </Window>
