@@ -31,5 +31,9 @@ namespace FyndDyne
             new MainWindow().Show();
             this.Close();
         }
+
+        private void DoneButtonClicked(object sender, RoutedEventArgs e) {
+
+        }
     }
 }

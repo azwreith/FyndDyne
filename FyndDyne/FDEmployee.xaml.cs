@@ -31,36 +31,46 @@ namespace FyndDyne {
             this.total_cost = total_cost;
         }
         
-        public string desc() {
-            return o_id + address + total_cost;
+    }
+
+    class CompletedClass {
+        public string o_id { get; set; }
+        public string total_cost { get; set; }
+
+        public CompletedClass(string o_id, string total_cost) {
+            this.o_id = o_id;
+            this.total_cost = total_cost;
         }
     }
 
     public partial class FDEmployee : Window {
-        List<PendingClass> pending = new List<PendingClass>();
+
         public FDEmployee() {
             InitializeComponent();
+
+            GetPending();
+            GetCompleted();
             
-            try {
-                var dbCon = DBConnection.Instance();
-                dbCon.Open();
-                string query = String.Format("SELECT o_id, total_cost, street, city, state, zip FROM User NATURAL JOIN Orders WHERE fde_id='{0}' AND status='Pending'", MainWindow.User);
-                var cmd = new MySqlCommand(query, dbCon.Connection);
-                var reader = cmd.ExecuteReader();
-                while(reader.Read()) {
-                    pending.Add(new PendingClass(reader.GetString("o_id"), reader.GetString("total_cost"), reader.GetString("street"), reader.GetString("city"), reader.GetString("state"), reader.GetString("zip")));
-                }
-                reader.Close();
-                dbCon.Close();
-                PendingList.ItemsSource = pending;
-            }
-            catch(Exception ex) {
-                Trace.WriteLine(ex);
-            }
         }
 
         private void DoneButtonClicked(object sender, RoutedEventArgs e) {
             
+            Button button = sender as Button;
+            PendingClass pc = button.DataContext as PendingClass;
+            try {
+                var dbCon = DBConnection.Instance();
+                dbCon.Open();
+                string query = String.Format("UPDATE Orders SET status='Delivered' WHERE o_id='{0}'", pc.o_id);
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                cmd.ExecuteNonQuery();
+                dbCon.Close();
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
+            GetPending();
+            GetCompleted();
+
         }
 
         private void LogoutButtonClicked(object sender, RoutedEventArgs e) {
@@ -68,6 +78,47 @@ namespace FyndDyne {
             MainWindow.Type = null;
             new MainWindow().Show();
             this.Close();
+        }
+
+        private void GetPending() {
+            List<PendingClass> Pending = new List<PendingClass>();
+            try {
+                var dbCon = DBConnection.Instance();
+                dbCon.Open();
+                string query = String.Format("SELECT o_id, total_cost, street, city, state, zip FROM User NATURAL JOIN Orders WHERE fde_id='{0}' AND status='Pending'", MainWindow.User);
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                var reader = cmd.ExecuteReader();
+                while(reader.Read()) {
+                    Pending.Add(new PendingClass(reader.GetString("o_id"), reader.GetString("street"), reader.GetString("city"), reader.GetString("state"), reader.GetString("zip"), reader.GetString("total_cost")));
+                }
+                reader.Close();
+                dbCon.Close();
+                PendingList.ItemsSource = Pending;
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
+        }
+
+        private void GetCompleted() {
+            List<CompletedClass> Completed = new List<CompletedClass>();
+            try {
+                var dbCon = DBConnection.Instance();
+                dbCon.Open();
+                string query = String.Format("SELECT o_id, total_cost FROM Orders WHERE fde_id='{0}' AND status='Delivered'", MainWindow.User);
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                var reader = cmd.ExecuteReader();
+                while(reader.Read()) {
+                    Completed.Add(new CompletedClass(reader.GetString("o_id"), reader.GetString("total_cost")));
+                }
+                reader.Close();
+                dbCon.Close();
+                CompletedList.ItemsSource = Completed;
+                
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
         }
     }
 }
