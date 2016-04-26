@@ -1,6 +1,6 @@
 CREATE TABLE Manager (
   m_id VARCHAR(30),
-  password VARCHAR(30) NOT NULL,
+  password VARCHAR(40) NOT NULL,
   f_name VARCHAR(30) NOT NULL,
   l_name VARCHAR(30) NOT NULL,
   PRIMARY KEY(m_id)
@@ -17,12 +17,12 @@ CREATE TABLE Restaurant (
   zip VARCHAR(6) NOT NULL,
   image LONGBLOB,
   PRIMARY KEY(r_id),
-  FOREIGN KEY(m_id) REFERENCES Manager
+  FOREIGN KEY(m_id) REFERENCES Manager(m_id)
 );
 
 CREATE TABLE FD_Employee (
   fde_id VARCHAR(30),
-  password VARCHAR(30) NOT NULL,
+  password VARCHAR(40) NOT NULL,
   f_name VARCHAR(30) NOT NULL,
   l_name VARCHAR(30) NOT NULL,
   user_level ENUM('Admin', 'Employee') NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE FD_Employee (
 
 CREATE TABLE User (
   u_id VARCHAR(30),
-  password VARCHAR(30) NOT NULL,
+  password VARCHAR(40) NOT NULL,
   f_name VARCHAR(30) NOT NULL,
   l_name VARCHAR(30) NOT NULL,
   phone VARCHAR(10) NOT NULL,
@@ -51,12 +51,11 @@ CREATE TABLE Product (
   type ENUM('Veg', 'Non-Veg'),
   description VARCHAR(200),
   price NUMERIC(10, 2),
-  image LONGBLOB,
   PRIMARY KEY(p_id),
-  FOREIGN KEY(r_id) REFERENCES Restaurant
+  FOREIGN KEY(r_id) REFERENCES Restaurant(r_id)
 );
 
-CREATE TABLE Order (
+CREATE TABLE Orders (
   o_id INT AUTO_INCREMENT,
   u_id VARCHAR(30),
   fde_id VARCHAR(30),
@@ -64,8 +63,8 @@ CREATE TABLE Order (
   delivery_type ENUM('Takeaway', 'Delivery'),
   status ENUM('Pending', 'Delivered', 'Cancelled'),
   PRIMARY KEY(o_id),
-  FOREIGN KEY(u_id) REFERENCES User,
-  FOREIGN KEY(fde_id) REFERENCES FD_Employee
+  FOREIGN KEY(u_id) REFERENCES User(u_id),
+  FOREIGN KEY(fde_id) REFERENCES FD_Employee(fde_id)
 );
 
 CREATE TABLE Order_Product (
@@ -73,6 +72,14 @@ CREATE TABLE Order_Product (
   p_id INT,
   qty INT,
   PRIMARY KEY(o_id, p_id),
-  FOREIGN KEY(o_id) REFERENCES Order,
-  FOREIGN KEY(p_id) REFERENCES Product,
+  FOREIGN KEY(o_id) REFERENCES Orders(o_id),
+  FOREIGN KEY(p_id) REFERENCES Product(p_id)
+);
+
+CREATE TABLE Cart (
+  u_id VARCHAR(30),
+  p_id INT,
+  PRIMARY KEY(u_id, p_id),
+  FOREIGN KEY(u_id) REFERENCES User(u_id),
+  FOREIGN KEY(p_id) REFERENCES Product(p_id)
 );

@@ -24,3 +24,6 @@ C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\D
 C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Menu.g.cs
 C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Cart.baml
 C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Menu.baml
+C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\bin\Debug\FyndDyne.exe.config
+C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.exe
+C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.pdb
