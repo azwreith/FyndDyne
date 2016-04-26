@@ -12,25 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FyndDyne
-{
+namespace FyndDyne {
     /// <summary>
     /// Interaction logic for FDEmployee.xaml
     /// </summary>
-    public partial class FDEmployee : Window
-    {
-        public FDEmployee()
-        {
+    public partial class FDEmployee : Window {
+        public FDEmployee() {
             InitializeComponent();
         }
 
-        private void DoneButtonClicked(object sender, RoutedEventArgs e)
-        {
+        private void DoneButtonClicked(object sender, RoutedEventArgs e) {
 
         }
 
-        private void LogoutButtonClicked(object sender, RoutedEventArgs e)
-        {
+        private void LogoutButtonClicked(object sender, RoutedEventArgs e) {
 
         }
     }
