@@ -27,6 +27,7 @@ C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\D
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\bin\Debug\FyndDyne.exe.config
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.exe
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.pdb
+<<<<<<< HEAD
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\bin\Debug\FyndDyne.exe
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\bin\Debug\FyndDyne.pdb
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\bin\Debug\MySql.Data.dll
@@ -51,3 +52,6 @@ C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\SignIn.baml
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.g.resources
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.Properties.Resources.resources
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.csproj.GenerateResource.Cache
+=======
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\bin\Debug\MySql.Data.dll
+>>>>>>> origin/master
