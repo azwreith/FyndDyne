@@ -19,10 +19,12 @@ namespace FyndDyne {
     public partial class FDEmployee : Window {
         public FDEmployee() {
             InitializeComponent();
+            Grid a = new Grid();
+            
         }
 
         private void DoneButtonClicked(object sender, RoutedEventArgs e) {
-
+            
         }
 
         private void LogoutButtonClicked(object sender, RoutedEventArgs e) {
