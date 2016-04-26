@@ -27,3 +27,18 @@ C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.Properties.
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.csproj.GenerateResource.Cache
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.exe
 C:\Users\arora\Documents\GitHub\FyndDyne\FyndDyne\obj\Debug\FyndDyne.pdb
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\FyndDyne.csprojResolveAssemblyReference.cache
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\AdminPortal.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Cart.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\FDEmployee.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\MainWindow.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Manager.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Menu.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Orders.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\Register.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\SignIn.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\App.g.cs
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\FyndDyne_MarkupCompile.cache
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\FyndDyne_MarkupCompile.lref
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\FyndDyne.exe
+C:\Users\Sith Lord\Documents\Visual Studio 2015\Projects\FyndDyne\FyndDyne\obj\Debug\FyndDyne.pdb

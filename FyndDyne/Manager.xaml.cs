@@ -23,5 +23,10 @@ namespace FyndDyne
         {
             InitializeComponent();
         }
+
+        private void LogoutButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
