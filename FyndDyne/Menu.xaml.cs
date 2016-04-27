@@ -121,8 +121,9 @@ namespace FyndDyne
                     var cmd2 = new MySqlCommand(query2, dbCon.Connection);
                     cmd2.ExecuteNonQuery();
                     dbCon.Close();
+                    MessageBox.Show("Added to Cart!");
                 }
-                MessageBox.Show("Added to Cart!");
+
                 else {
                     MessageBox.Show("You need to be logged in!", "Error");
                 }
@@ -153,8 +154,9 @@ namespace FyndDyne
                 var cmd2 = new MySqlCommand(query2, dbCon.Connection);
                 cmd2.ExecuteNonQuery();
                     dbCon.Close();
+                    MessageBox.Show("Added to Cart!");
                 }
-                MessageBox.Show("Added to Cart!");
+
                 else {
                     MessageBox.Show("You need to be logged in!", "Error");
                 }

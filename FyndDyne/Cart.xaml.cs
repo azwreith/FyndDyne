@@ -37,5 +37,10 @@ namespace FyndDyne
             new MainWindow().Show();
             this.Close();
         }
+
+        private void RemoveItem(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

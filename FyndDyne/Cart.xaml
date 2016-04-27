@@ -16,6 +16,40 @@
             <Button x:Name="Back" HorizontalAlignment="Left" Width="100" VerticalAlignment="Center" Height="35" Background="#212121" Margin="5,0,5,0" Foreground="White" Content="Back" FontSize="20" FontWeight="Light" Click="BackButtonClick"/>
             <Button x:Name="Logout" HorizontalAlignment="Right" Width="100" VerticalAlignment="Center" Height="35" Background="#212121" Margin="5,0,5,0" Foreground="White" Content="Logout" FontSize="20" FontWeight="Light" Click="LogoutButtonClick"/>
         </Grid>
-        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Margin="10" Grid.Column="1" >
+                <StackPanel Background="AntiqueWhite">
+                    <Grid Background="#C70039" Margin="0,0,0,5">
+                        <TextBlock Text="Items" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
+                    </Grid>
+                    <ListView x:Name="Main">
+
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="6*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding name}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding cost}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding qty}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <Button x:Name="Remove" Grid.Column="1" FontWeight="ExtraLight" FontSize="20" Click="RemoveItem" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+                <Button x:Name="Buy" Content="Buy" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light" Margin="0,20,0,10" VerticalAlignment="Bottom" Grid.Row="1"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
