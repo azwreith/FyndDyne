@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,6 +37,29 @@ namespace FyndDyne
 
         private void SubmitButtonAction(object sender, RoutedEventArgs e)
         {
+            if (UserName.Text.Equals("") || Password.Password.Equals("") || FirstName.Text.Equals("") || LastName.Text.Equals("") ||
+                Name.Text.Equals("") || Phone.Text.Equals("") || StreetAddress.Text.Equals("") || City.Text.Equals("") ||
+                State.Text.Equals("") || ZipCode.Text.Equals(""))
+            {
+                MessageBox.Show("Input all input fields!", "Error");
+                return;
+            }
+                
+            else if (!Password.Password.Equals(ConfirmPassword.Password))
+            {
+                MessageBox.Show("Passwords Do Not Match!", "Error");
+                return;
+            }
+            else if (!Regex.IsMatch(ZipCode.Text, "^[0-9]{6}$"))
+            {
+                MessageBox.Show("Invalid Zip!", "Error");
+                return;
+            }
+            else if (!Regex.IsMatch(Phone.Text, "^[0-9]{10}$"))
+            {
+                MessageBox.Show("Invalid Phone!", "Error");
+                return;
+            }
             string query = "INSERT INTO Manager values('" + UserName.Text + "', '"+ Utilities.MD5(Password.Password) +
                 "', '" + FirstName.Text + "', '" + LastName.Text + "');" ;
             string query2 = "INSERT INTO Restaurant values( 1,'" + UserName.Text + "', '" + Name.Text +
