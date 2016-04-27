@@ -27,7 +27,7 @@
                     <Grid Background="#C70039" Margin="0,0,0,5">
                         <TextBlock Text="Items" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                     </Grid>
-                    <ListView x:Name="Main">
+                    <ListView x:Name="CartData">
 
                         <ListView.ItemTemplate>
 
@@ -41,14 +41,18 @@
                                         <TextBlock Text="{Binding name}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
                                         <TextBlock Grid.Column="1" Text="{Binding cost}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
                                         <TextBlock Grid.Column="1" Text="{Binding qty}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                                        <Button x:Name="Remove" Grid.Column="1" FontWeight="ExtraLight" FontSize="20" Click="RemoveItem" />
+                                        <Button x:Name="Remove" Content="Remove" Grid.Column="1" FontWeight="ExtraLight" FontSize="20" Click="RemoveItem" />
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
-                <Button x:Name="Buy" Content="Buy" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light" Margin="0,20,0,10" VerticalAlignment="Bottom" Grid.Row="1"/>
+                <StackPanel Orientation="Horizontal" Background="#ff5733">
+                <RadioButton x:Name="delivery" GroupName="delitype" Content="Delivery" IsChecked="True" FontWeight="ExtraLight" FontSize="12" Margin="5,0,0,0" Foreground="White" HorizontalAlignment="Center"/>
+                    <RadioButton x:Name="takeaway" GroupName="delitype" Content="Takeaway" FontWeight="ExtraLight" FontSize="12" Margin="5,0,0,0" Foreground="White" HorizontalAlignment="Center"/>
+                </StackPanel>
+                    <Button x:Name="Buy" Content="Buy" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light" Margin="0,20,0,10" VerticalAlignment="Bottom" Grid.Row="1" Click="Buy_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

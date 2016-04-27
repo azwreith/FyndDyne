@@ -46,6 +46,12 @@ namespace FyndDyne
         public MainWindow()
         {
             InitializeComponent();
+
+            if(User!=null) {
+                Login.Content = "Cart";
+                SignUp.Content = "Logout";
+            }
+
             List<RestaurantClass> reslist = new List<RestaurantClass>();
             try
             {
@@ -75,14 +81,29 @@ namespace FyndDyne
 
         private void SignUpButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new Register().Show();
+            if(User==null) {
+                this.Hide();
+                new Register().Show();
+            }
+            else { //logout
+                MainWindow.User = null;
+                MainWindow.Type = null;
+                new MainWindow().Show();
+                this.Close();
+            }
+          
         }
 
         private void LoginButtonClick(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new SignIn().Show();
+            if(User==null) {
+                this.Hide();
+                new SignIn().Show();
+            }
+            else {  //cart
+                this.Hide();
+                new Cart().Show();
+            }
         }
 
         private void LogoutButtonClick(object sender, RoutedEventArgs e)
