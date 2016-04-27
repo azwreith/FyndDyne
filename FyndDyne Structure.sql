@@ -79,6 +79,7 @@ CREATE TABLE Order_Product (
 CREATE TABLE Cart (
   u_id VARCHAR(30),
   p_id INT,
+  qty INT,
   PRIMARY KEY(u_id, p_id),
   FOREIGN KEY(u_id) REFERENCES User(u_id),
   FOREIGN KEY(p_id) REFERENCES Product(p_id)
