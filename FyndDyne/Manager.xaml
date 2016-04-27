@@ -21,31 +21,87 @@
                 <ColumnDefinition Width="8*" />
             </Grid.ColumnDefinitions>
             <Border BorderBrush="AntiqueWhite" BorderThickness="1" Grid.Column="0">
-            <StackPanel>
-                <Button Content="Assign Order" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Margin="0,40,0,0" Height="40"/>
-                <Button Content="Add Items" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40"/>
-                <Button Content="View Orders" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40"/>
+                <StackPanel>
+                    <Button Content="Assign Order" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Margin="0,40,0,0" Height="40" Click="ShowPendingOrders"/>
+                    <Button Content="Add Items" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40" Click="AddItems"/>
+                    <Button Content="View Orders" FontSize="20" FontWeight="Light" Background="#C70039" Foreground="AntiqueWhite" Height="40" Click="ViewOrders"/>
                 </StackPanel>
             </Border>
-            <StackPanel x:Name="Pending"  Grid.Column="1" Margin="10">
-                <Grid Background="#C70039" Margin="0,0,0,5">
+
+            <StackPanel x:Name="Pending"  Grid.Column="1" Margin="10,10,10,0" Visibility="Hidden">
+                <Grid Background="#C70039">
                     <TextBlock Text="Pending Orders" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                 </Grid>
+                <ListView x:Name="PendingList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            
                 <StackPanel Background="AntiqueWhite">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="6*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <StackPanel>
-                        <TextBlock Text="Order Id" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                        <TextBlock Text="Address" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                        <TextBlock Text="Price" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
-                    </StackPanel>
-                    <Button x:Name="Done" Content="Done" Grid.Column="1" VerticalAlignment="Center" Width="75" Height="25" Background="#212121" Margin="5,0,5,0" Foreground="White" FontSize="17" FontWeight="Light" Click="DoneButtonClicked"/>
-                </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Order Id" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                            <TextBlock Text="Address" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                            <TextBlock Text="Price" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
+                        </StackPanel>
+                        
+                    </Grid>
+                </StackPanel>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackPanel>
-        </StackPanel>
+            <StackPanel x:Name="AddItem" HorizontalAlignment="Center" Grid.Column="1" Margin="10" Visibility="Hidden">
+                <Label Content="Item Name" Target="{Binding ElementName=ItemName}" Foreground="White" FontSize="20" FontWeight="ExtraLight"/>
+                <TextBox x:Name="ItemName" Width="400" Height="30" FontWeight="Light" Background="Gray" Margin="0,0,0,5" FontSize="20"/>                
+                <Label Content="Category" Target="{Binding ElementName=Category}" Foreground="White" FontSize="20" FontWeight="ExtraLight"/>
+                <TextBox x:Name="Category" Width="400" Height="30" FontWeight="Light" Background="Gray" Margin="0,0,0,5" FontSize="20"/>
+                <Grid>
+                    <Grid Margin="0,0,10,0" HorizontalAlignment="Left">
+                        <StackPanel>
+                            <Label Content="Price" Target="{Binding ElementName=Price}" Foreground="White" FontSize="20" FontWeight="ExtraLight"/>
+                            <PasswordBox x:Name="Price" Width="190" Height="30" FontWeight="Light" Background="Gray" Margin="0,0,0,5" FontSize="20" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid HorizontalAlignment="Right">
+                        <StackPanel>
+                            <Label Content="Type" Target="{Binding ElementName=Type}" Foreground="White" FontSize="20" FontWeight="ExtraLight"/>
+                            <TextBlock x:Name="Type" Width="190" Height="30" FontWeight="Light" Background="Gray" Margin="0,0,0,5" FontSize="20"/>
+                        </StackPanel>
+                    </Grid>
+                    
+                </Grid>
+                <Label Content="Description" Target="{Binding ElementName=Desc}" Foreground="White" FontSize="20" FontWeight="ExtraLight"/>
+                <TextBox x:Name="Desc" Width="400" Height="30" FontWeight="Light" Background="Gray" Margin="0,0,0,5" FontSize="20"/>
+                <Button x:Name="SubmitButton" Content="Submit" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light" Margin="0,20,0,10" VerticalAlignment="Bottom" Grid.Row="1" Click="SubmitButtonClicked"/>
+            </StackPanel>
+            <StackPanel x:Name="Orders"  Grid.Column="1" Margin="10,10,10,0" Visibility="Visible">
+                <Grid Background="#C70039">
+                    <TextBlock Text="Orders" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
+                </Grid>
+                <ListView x:Name="OrderList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Background="AntiqueWhite">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Text="Order Id" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                            <TextBlock Text="Price" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
