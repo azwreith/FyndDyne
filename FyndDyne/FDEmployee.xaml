@@ -40,7 +40,7 @@
                                 <TextBlock x:Name="address" Text="{Binding address}" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
                                 <TextBlock x:Name="total_cost" Text="{Binding total_cost}" FontWeight="Light" FontSize="15" Margin="5,0,0,0"/>
                             </StackPanel>
-                            <Button x:Name="Done" Content="Done" Grid.Column="1" VerticalAlignment="Center" Width="75" Height="25" Background="#212121" Margin="5,0,5,0" Foreground="White" FontSize="17" FontWeight="Light" Click="DoneButtonClicked"/>
+                            <Button x:Name="Done" HorizontalAlignment="Right" Content="Done"  Grid.Column="1" VerticalAlignment="Center" Width="75" Height="25" Background="#212121" Margin="5,0,5,0" Foreground="White" FontSize="17" FontWeight="Light" Click="DoneButtonClicked"/>
                         </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -50,16 +50,26 @@
                         <Grid Background="#C70039" Margin="0,0,0,5">
                             <TextBlock Text="Completed Orders" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                         </Grid>
-                        <Grid>
+                        <ListView x:Name="CompletedList" >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                           <Grid Width="800">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="6*" />
+                                <ColumnDefinition Width="6*"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-
-                            <TextBlock Text="Order ID" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
-                            <TextBlock Text="Price" Grid.Column="1" FontWeight="ExtraLight" FontSize="15" Margin="0,0,5,0" HorizontalAlignment="Right"/>
-
-                        </Grid>
+                                        <StackPanel Orientation="Horizontal">
+                                         
+                                                <TextBlock Text="Order ID:" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                                                <TextBlock Text="{Binding o_id}" FontWeight="ExtraLight" FontSize="15" Margin="5,0,0,0"/>
+                                                <TextBlock Text="Cost: " Grid.Column="1" FontWeight="ExtraLight" FontSize="15" Margin="0,0,5,0" HorizontalAlignment="Right"/>
+                                                <TextBlock Text="{Binding total_cost}" Grid.Column="1" FontWeight="ExtraLight" FontSize="15" Margin="0,0,5,0" HorizontalAlignment="Right"/>
+                                          
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                 </StackPanel>
             </Grid>

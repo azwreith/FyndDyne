@@ -60,3 +60,7 @@ INSERT INTO Orders(u_id, fde_id, total_cost, delivery_type, status)
 VALUES ('ujj', 'kev', 300, 'Delivery', 'Pending');
 INSERT INTO Orders(u_id, fde_id, total_cost, delivery_type, status)
 VALUES ('matt', 'kev', 150, 'Delivery', 'Pending');
+INSERT INTO Orders(u_id, fde_id, total_cost, delivery_type, status)
+VALUES ('ujj', 'kev', 350, 'Delivery', 'Delivered');
+INSERT INTO Orders(u_id, fde_id, total_cost, delivery_type, status)
+VALUES ('matt', 'kev', 100, 'Delivery', 'Delivered');

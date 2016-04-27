@@ -128,12 +128,6 @@ namespace FyndDyne {
             {
             case 1:
             this.Logout = ((System.Windows.Controls.Button)(target));
-            
-            #line 17 "..\..\AdminPortal.xaml"
-            this.Logout.Click += new System.Windows.RoutedEventHandler(this.Logout_Click);
-            
-            #line default
-            #line hidden
             return;
             case 2:
             this.FirstName = ((System.Windows.Controls.TextBox)(target));

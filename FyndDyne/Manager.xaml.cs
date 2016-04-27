@@ -32,6 +32,7 @@ namespace FyndDyne
             this.Close();
         }
 
+<<<<<<< HEAD
         private void DoneButtonClicked(object sender, RoutedEventArgs e)
         {
 
@@ -60,6 +61,9 @@ namespace FyndDyne
 
         private void SubmitButtonClicked(object sender, RoutedEventArgs e)
         {
+=======
+        private void DoneButtonClicked(object sender, RoutedEventArgs e) {
+>>>>>>> origin/master
 
         }
     }
