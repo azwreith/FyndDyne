@@ -102,13 +102,96 @@ namespace FyndDyne
         }
 
         private void BreadsSelected(object sender, MouseButtonEventArgs e) {
-            ProductClass pd = Breads.SelectedItem as ProductClass;
+            try {
+                if(MainWindow.User != null) {
+                    ProductClass pd = Breads.SelectedItem as ProductClass;
+                    var dbCon = DBConnection.Instance();
+                    dbCon.Open();
+                    var query = String.Format("SELECT * FROM Cart WHERE u_id = '{0}' and p_id = {1}", MainWindow.User, pd.p_id);
+                    var cmd = new MySqlCommand(query, dbCon.Connection);
+                    var reader = cmd.ExecuteReader();
+                    String query2;
+                    if(reader.Read()) {
+                        query2 = String.Format("UPDATE Cart SET qty = {0}+1 WHERE u_id = '{1}' and p_id = {2}", reader.GetString("qty"), MainWindow.User, pd.p_id);
+                    }
+                    else {
+                        query2 = String.Format("INSERT INTO Cart VALUES('{0}', {1}, 1)", MainWindow.User, pd.p_id);
+                    }
+                    reader.Close();
+                    var cmd2 = new MySqlCommand(query2, dbCon.Connection);
+                    cmd2.ExecuteNonQuery();
+                    dbCon.Close();
+                }
+                MessageBox.Show("Added to Cart!");
+                else {
+                    MessageBox.Show("You need to be logged in!", "Error");
+                }
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
         }
+      
         private void MainSelected(object sender, MouseButtonEventArgs e) {
-            ProductClass pd = Main.SelectedItem as ProductClass;
+            try {
+                if(MainWindow.User != null) {
+            
+                ProductClass pd = Main.SelectedItem as ProductClass;
+                var dbCon = DBConnection.Instance();
+                dbCon.Open();
+                var query = String.Format("SELECT * FROM Cart WHERE u_id = '{0}' and p_id = {1}", MainWindow.User, pd.p_id);
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                var reader = cmd.ExecuteReader();
+                String query2;
+                if(reader.Read()) {
+                    query2 = String.Format("UPDATE Cart SET qty = {0}+1 WHERE u_id = '{1}' and p_id = {2}", reader.GetString("qty"), MainWindow.User, pd.p_id);
+                }
+                else {
+                    query2 = String.Format("INSERT INTO Cart VALUES('{0}', {1}, 1)", MainWindow.User, pd.p_id);
+                }
+                    reader.Close();
+                var cmd2 = new MySqlCommand(query2, dbCon.Connection);
+                cmd2.ExecuteNonQuery();
+                    dbCon.Close();
+                }
+                MessageBox.Show("Added to Cart!");
+                else {
+                    MessageBox.Show("You need to be logged in!", "Error");
+                }
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
         }
         private void DessertsSelected(object sender, MouseButtonEventArgs e) {
-            ProductClass pd = Desserts.SelectedItem as ProductClass;
+            try {
+                if(MainWindow.User != null) {
+                    ProductClass pd = Desserts.SelectedItem as ProductClass;
+                    var dbCon = DBConnection.Instance();
+                    dbCon.Open();
+                    var query = String.Format("SELECT * FROM Cart WHERE u_id = '{0}' and p_id = {1}", MainWindow.User, pd.p_id);
+                    var cmd = new MySqlCommand(query, dbCon.Connection);
+                    var reader = cmd.ExecuteReader();
+                    String query2;
+                    if(reader.Read()) {
+                        query2 = String.Format("UPDATE Cart SET qty = {0}+1 WHERE u_id = '{1}' and p_id = {2}", reader.GetString("qty"), MainWindow.User, pd.p_id);
+                    }
+                    else {
+                        query2 = String.Format("INSERT INTO Cart VALUES('{0}', {1}, 1)", MainWindow.User, pd.p_id);
+                    }
+                    reader.Close();
+                    var cmd2 = new MySqlCommand(query2, dbCon.Connection);
+                    cmd2.ExecuteNonQuery();
+                    dbCon.Close();
+                    MessageBox.Show("Added to Cart!");
+                }
+                else {
+                    MessageBox.Show("You need to be logged in!", "Error");
+                }
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
         }
     }
 }
