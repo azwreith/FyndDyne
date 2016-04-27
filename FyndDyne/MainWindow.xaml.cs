@@ -61,6 +61,7 @@ namespace FyndDyne
                 reader.Close();
                 dbCon.Close();
                 Restaurants.ItemsSource = reslist;
+                this.DataContext = reslist;
             }
             catch (Exception ex)
             {
@@ -99,7 +100,7 @@ namespace FyndDyne
             {
                 var dbCon = DBConnection.Instance();
                 dbCon.Open();
-                string query = String.Format("SELECT *, R.name AS naam FROM Restaurant AS R NATURAL JOIN PRODUCT AS P WHERE naam LIKE '{0}' OR P.name LIKE '{0}' OR P.category LIKE '{0}' OR P.type LIKE '{0}' OR R.city LIKE '{0}' OR R.state LIKE '{0}'", Search.Text);
+                string query = String.Format("SELECT *, R.name AS naam FROM Restaurant AS R NATURAL JOIN PRODUCT AS P WHERE R.name LIKE '{0}' OR P.name LIKE '{0}' OR P.category LIKE '{0}' OR P.type LIKE '{0}' OR R.city LIKE '{0}' OR R.state LIKE '{0}'", Search.Text);
                 var cmd = new MySqlCommand(query, dbCon.Connection);
                 var reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -108,7 +109,8 @@ namespace FyndDyne
                 }
                 reader.Close();
                 dbCon.Close();
-                //TODO Add ItemSource
+                Restaurants.ItemsSource = reslist;
+  
             }
             catch (Exception ex)
             {

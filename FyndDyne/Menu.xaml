@@ -27,49 +27,71 @@
                 <StackPanel Margin="5" Grid.Column="1" >
             <StackPanel Background="AntiqueWhite">
                 <Grid Background="#C70039" Margin="0,0,0,5">
-                    <TextBlock Text="Item Type" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
+                    <TextBlock Text="Main Course" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                 </Grid>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="6*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        
-                        <TextBlock Text="Item 1" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                        <TextBlock Grid.Column="1" Text="$50" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                    </Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="6*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
+                        <ListView x:Name="Main" MouseDoubleClick="ItemSelected">
 
-                            <TextBlock Text="Item 2" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="$30" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                        </Grid>
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="6*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Text="{Binding name}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding cost}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                    </Grid>
+
+
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                     <StackPanel Background="AntiqueWhite" Margin="0,10,0,0">
                         <Grid Background="#C70039" Margin="0,0,0,5">
-                            <TextBlock Text="Item Type 2" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
+                            <TextBlock Text="Breads" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
                         </Grid>
-                        <Grid>
+                        <ListView x:Name="Breads" MouseDoubleClick="ItemSelected">
+
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+                                    <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="6*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Item 1" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="$50" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding name}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding name}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
                         </Grid>
-                        <Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                    <StackPanel Background="AntiqueWhite" Margin="0,10,0,0">
+                        <Grid Background="#C70039" Margin="0,0,0,5">
+                            <TextBlock Text="Desserts" VerticalAlignment="Center" FontSize="20" FontFamily="Verdena" Foreground="White" FontWeight="Light" Padding="5"/>
+                        </Grid>
+                        <ListView x:Name="Desserts" MouseDoubleClick="ItemSelected">
+
+                            <ListView.ItemTemplate>
+
+                                <DataTemplate>
+                                    <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="6*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="Item 2" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
-                            <TextBlock Grid.Column="1" Text="$30" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding name}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding cost}" FontWeight="ExtraLight" FontSize="20" Margin="5,0,0,0"/>
                         </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                 </StackPanel>
             </Grid>

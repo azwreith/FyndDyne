@@ -33,32 +33,37 @@
             </StackPanel>
         </Grid>
                 <Grid Grid.Row="1" Margin="10,0,10,0">
-                    <Image Source="C:\Users\Sith Lord\Pictures\b1.jpg" Margin="0,7,0,0" HorizontalAlignment="Center" Width="800"/>
+                    <Image Source="C:\Users\arora\Downloads\b1.jpg" Margin="0,7,0,0" HorizontalAlignment="Center" Width="800"/>
 
         </Grid>
         <Grid Grid.Row="2">
 
             <WrapPanel HorizontalAlignment="Center" FlowDirection="LeftToRight">
                         <ListView x:Name="Restaurants" MouseDoubleClick="RestaurantSelected">
+
                             <ListView.ItemTemplate>
+                   
                                 <DataTemplate>
                                     
             <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" MaxWidth="225">
-                <Grid>
-                    <Grid.RowDefinitions>
+              
+                    <Grid>
+                        <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="4*" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <Image Source="C:\Users\Sith Lord\Desktop\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
+                    <Image Source="C:\Users\arora\Downloads\m1.jpg" Stretch="UniformToFill" Grid.Row="0"/>
                     <TextBlock Text="{Binding name}" FontWeight="Light" FontSize="30" Margin="7,0,5,0" Grid.Row="1" VerticalAlignment="Center"/>
                     <TextBlock Text="{Binding phone}" FontSize="20" FontWeight="ExtraLight" Margin="7,0,5,2" Grid.Row="2" VerticalAlignment="Center"/>
                 </Grid>
             </Border>
 
                                 </DataTemplate>
-                            </ListView.ItemTemplate>
+                     
+                        </ListView.ItemTemplate>
+                            
                         </ListView>
                         
                     </WrapPanel>
