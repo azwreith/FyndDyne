@@ -36,5 +36,31 @@ namespace FyndDyne
         {
 
         }
+
+        private void ShowPendingOrders(object sender, RoutedEventArgs e)
+        {
+            Pending.Visibility = Visibility.Visible;
+            Orders.Visibility = Visibility.Hidden;
+            AddItem.Visibility = Visibility.Hidden;
+        }
+
+        private void AddItems(object sender, RoutedEventArgs e)
+        {
+            Pending.Visibility = Visibility.Hidden;
+            Orders.Visibility = Visibility.Hidden;
+            AddItems.Visibility = Visibility.Visible;
+        }
+
+        private void ViewOrders(object sender, RoutedEventArgs e)
+        {
+            Pending.Visibility = Visibility.Hidden;
+            Orders.Visibility = Visibility.Visible;
+            AddItems.Visibility = Visibility.Hidden;
+        }
+
+        private void SubmitButtonClicked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
