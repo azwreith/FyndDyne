@@ -32,7 +32,7 @@ namespace FyndDyne
             this.Close();
         }
 
-<<<<<<< HEAD
+
         private void DoneButtonClicked(object sender, RoutedEventArgs e)
         {
 
@@ -49,22 +49,19 @@ namespace FyndDyne
         {
             Pending.Visibility = Visibility.Hidden;
             Orders.Visibility = Visibility.Hidden;
-            AddItems.Visibility = Visibility.Visible;
+            AddItem.Visibility = Visibility.Visible;
         }
 
         private void ViewOrders(object sender, RoutedEventArgs e)
         {
             Pending.Visibility = Visibility.Hidden;
             Orders.Visibility = Visibility.Visible;
-            AddItems.Visibility = Visibility.Hidden;
+            AddItem.Visibility = Visibility.Hidden;
         }
 
-        private void SubmitButtonClicked(object sender, RoutedEventArgs e)
-        {
-=======
-        private void DoneButtonClicked(object sender, RoutedEventArgs e) {
->>>>>>> origin/master
-
+        private void SubmitButtonClicked(object sender, RoutedEventArgs e) {
         }
+
+
     }
 }

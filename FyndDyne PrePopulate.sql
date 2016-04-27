@@ -48,8 +48,6 @@ VALUES (1, 'Aaaloo Parantha', 'Breads', 'Veg', 'Authentic Punjabi aaloo parantha
 INSERT INTO PRODUCT(r_id, name, category, type, description, price)
 VALUES (1, 'Butter Nan', 'Breads', 'Veg', 'Nan with butter on top', 30);
 INSERT INTO PRODUCT(r_id, name, category, type, description, price)
-VALUES (1, 'Dragon Chicken', 'Starters', 'Non-Veg', 'Straight from Shanghai', 150);
-INSERT INTO PRODUCT(r_id, name, category, type, description, price)
 VALUES (1, 'Death by Chocolate', 'Dessert', 'Veg', 'Chocolate that kills you', 90);
 INSERT INTO PRODUCT(r_id, name, category, type, description, price)
 VALUES (2, 'Belgian Chocolate', 'Dessert', 'Veg', 'Enjoy the very best icecream', 30);

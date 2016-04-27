@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,14 +16,34 @@ using System.Windows.Shapes;
 
 namespace FyndDyne
 {
+
+    class ProductClass {
+        public string p_id { get; set; }
+        public string name { get; set; }
+        public string type { get; set; }
+        public string desc { get; set; }
+        public string cost { get; set; }
+
+        public ProductClass(string p_id, string name, string type, string desc, string price) {
+            this.p_id = p_id;
+            this.name = name;
+            this.type = type;
+            this.desc = desc;
+            this.cost = "Rs. " + price;
+        }
+    }
+
     /// <summary>
     /// Interaction logic for Menuxaml.xaml
     /// </summary>
-    public partial class Menuxaml : Window
+    public partial class Menu : Window
     {
-        public Menuxaml(int r_id)
+        string r_id;
+        public Menu(string r_id)
         {
             InitializeComponent();
+            this.r_id = r_id;
+            GetMenu();
         }
 
         private void LogoutButtonClick(object sender, RoutedEventArgs e)
@@ -34,7 +56,59 @@ namespace FyndDyne
 
         private void BackButtonClick(object sender, RoutedEventArgs e)
         {
-            //TODO back to the restaurant page
+            new MainWindow().Show();
+            this.Close();
+        }
+
+        private void GetMenu() {
+            List<ProductClass> main = new List<ProductClass>();
+            List<ProductClass> breads = new List<ProductClass>();
+            List<ProductClass> dessert = new List<ProductClass>();
+            try {
+                var dbCon = DBConnection.Instance();
+                dbCon.Open();
+                string query = String.Format("SELECT * FROM PRODUCT WHERE category='Main Course' and r_id='{0}'", r_id);
+                var cmd = new MySqlCommand(query, dbCon.Connection);
+                var reader = cmd.ExecuteReader();
+                while(reader.Read()) {
+                    main.Add(new ProductClass(reader.GetString("p_id"), reader.GetString("name"), reader.GetString("type"), reader.GetString("description"), reader.GetString("price")));
+                }
+                reader.Close();
+                query = String.Format("SELECT * FROM PRODUCT WHERE category='Breads' and r_id='{0}'", r_id);
+                cmd = new MySqlCommand(query, dbCon.Connection);
+                reader = cmd.ExecuteReader();
+                while(reader.Read()) {
+                    breads.Add(new ProductClass(reader.GetString("p_id"), reader.GetString("name"), reader.GetString("type"), reader.GetString("description"), reader.GetString("price")));
+                }
+                reader.Close();
+                query = String.Format("SELECT * FROM PRODUCT WHERE category='Dessert' and r_id='{0}'", r_id);
+                cmd = new MySqlCommand(query, dbCon.Connection);
+                reader = cmd.ExecuteReader();
+                while(reader.Read()) {
+                    dessert.Add(new ProductClass(reader.GetString("p_id"), reader.GetString("name"), reader.GetString("type"), reader.GetString("description"), reader.GetString("price")));
+                }
+                reader.Close();
+                dbCon.Close();
+                Main.ItemsSource = main;
+                Breads.ItemsSource = breads;
+                Desserts.ItemsSource = dessert;
+
+            }
+            catch(Exception ex) {
+                Trace.WriteLine(ex);
+            }
+
+
+        }
+
+        private void BreadsSelected(object sender, MouseButtonEventArgs e) {
+            ProductClass pd = Breads.SelectedItem as ProductClass;
+        }
+        private void MainSelected(object sender, MouseButtonEventArgs e) {
+            ProductClass pd = Main.SelectedItem as ProductClass;
+        }
+        private void DessertsSelected(object sender, MouseButtonEventArgs e) {
+            ProductClass pd = Desserts.SelectedItem as ProductClass;
         }
     }
 }

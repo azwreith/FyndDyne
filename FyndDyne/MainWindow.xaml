@@ -27,10 +27,10 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBox x:Name="Search" Text="Search for Restaurant/Items..." FontSize="20" Foreground="DarkGray"  VerticalAlignment="Center" Height="35" Width="500" FontWeight="Light" Padding="5,2,5,2"/>
                 <Button x:Name="SearchButton" Content="Search" Height="35" Width="100" FontSize="20" Background="#ff5733" Foreground="White" FontWeight="Light" Click="SearchButton_Click"/>
-            </StackPanel>
+            </StackPanel>-->
         </Grid>
                 <Grid Grid.Row="1" Margin="10,0,10,0">
                     <Image Source="C:\Users\arora\Downloads\b1.jpg" Margin="0,7,0,0" HorizontalAlignment="Center" Width="800"/>
@@ -39,17 +39,13 @@
         <Grid Grid.Row="2">
 
             <WrapPanel HorizontalAlignment="Center" FlowDirection="LeftToRight">
-<<<<<<< HEAD
-                        <ListView x:Name="Restaurants" MouseDoubleClick="RestaurantSelected">
 
-                            <ListView.ItemTemplate>
-                   
-                                <DataTemplate>
-=======
+          
+
             <ListView x:Name="Restaurant" MouseDoubleClick="RestaurantSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
->>>>>>> origin/master
+
                                     
             <Border Background="AntiqueWhite" CornerRadius="5,5,5,5" Margin="15,10,10,10" HorizontalAlignment="Center" MaxWidth="225">
               
